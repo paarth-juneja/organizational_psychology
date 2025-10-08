@@ -164,9 +164,71 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Mediator vs. Moderator Variables</h3>
-                            <div class="chart-container">
-                                <canvas id="mediatorModeratorChart"></canvas>
+                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Research Methods and Statistics</h3>
+                            <p class="text-slate-600 mb-6">This chapter is about how we know what we know in Org Psych. Exam questions focus on how we collect data, the basic types of statistics, and how we understand complex relationships between variables.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                                    <h4 class="font-bold text-lg text-slate-700 mb-3">Data Collection Methods</h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Surveys/Questionnaires: The most common method.</h5>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">How it works:</strong> Asking employees to rate their job satisfaction, team dynamics, etc.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Pros:</strong> Cheap, fast, and can get data from many people at once.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Cons:</strong> People might not be honest (social desirability bias), or they may not have good self-insight.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Observational Methods: Watching people work.</h5>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">How it works:</strong> A researcher might sit in on a team meeting to observe communication patterns.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Pros:</strong> You see actual behavior, not just what people say they do.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Cons:</strong> It's time-consuming, and the presence of a researcher might cause people to act differently (the Hawthorne Effect again!).</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                                    <h4 class="font-bold text-lg text-slate-700 mb-3">Core Statistical Concepts</h4>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Descriptive Statistics: Used to paint a picture of the data you have.</h5>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Analogy:</strong> It's like taking a photo and describing what you see: "This is a picture of ten people, and their average height is 5'8"."</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Examples:</strong> Mean (average), median (middle value), standard deviation (how spread out the data is).</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Inferential Statistics: Used to make educated guesses (inferences) about a larger group based on a small sample.</h5>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Analogy:</strong> It's like looking at that photo of ten people and saying, "Since the average height in this sample is 5'8", we can infer the average height of the entire population is likely close to 5'8"." It tells you if your findings are likely real or just a fluke.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Correlation</h5>
+                                             <p class="text-slate-600 pl-4">Measures the relationship between two things. A correlation of r = 0.53 means there is a moderate, positive relationship. As one thing goes up, the other tends to go up too.</p>
+                                             <div class="mt-2 ml-4 p-3 bg-amber-100 border-l-4 border-amber-500 rounded text-amber-900">
+                                                <strong class="font-semibold">CRITICAL RULE:</strong> Correlation does not equal causation! A famous example is that ice cream sales and shark attacks are positively correlated. This doesn't mean eating ice cream causes shark attacks. The hidden third factor (the cause) is hot weather, which leads to more people swimming and more people eating ice cream.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                                     <h4 class="font-bold text-lg text-slate-700 mb-3">Mediator vs. Moderator Variables</h4>
+                                     <p class="text-slate-600 mb-4">This is a tricky but frequently tested concept.</p>
+                                     <div class="space-y-4">
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Mediator Variable (The "Domino Effect")</h5>
+                                            <p class="text-slate-600 pl-4">It explains the <strong class="font-medium">how or why</strong> of a relationship. It's the middle domino in a chain reaction.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Structure:</strong> X → Mediator → Y (X causes the Mediator, which in turn causes Y).</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Simple Example:</strong> A stressful job (X) leads to burnout (Mediator), which then leads to quitting (Y). Burnout is the mediator that explains how stress leads to quitting.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-slate-700">Moderator Variable (The "Dimmer Switch")</h5>
+                                            <p class="text-slate-600 pl-4">It changes the <strong class="font-medium">strength or direction</strong> of a relationship. It doesn't cause the outcome, but it can make the effect stronger or weaker.</p>
+                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Simple Example:</strong> The relationship between studying (X) and exam scores (Y) is moderated by sleep. If you get enough sleep (Moderator), the relationship is strong (more studying = much higher score). If you pull an all-nighter and get no sleep, the relationship becomes weak or even disappears (more studying might not help your score at all). Sleep acts as a dimmer switch on the effect of studying.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                 <div class="chart-container">
+                                    <canvas id="mediatorModeratorChart"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -479,5 +541,4 @@
     </script>
 </body>
 </html>
-
 
