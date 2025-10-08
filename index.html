@@ -224,10 +224,38 @@
                                             <p class="text-slate-600 pl-4"><strong class="font-medium">Simple Example:</strong> The relationship between studying (X) and exam scores (Y) is moderated by sleep. If you get enough sleep (Moderator), the relationship is strong (more studying = much higher score). If you pull an all-nighter and get no sleep, the relationship becomes weak or even disappears (more studying might not help your score at all). Sleep acts as a dimmer switch on the effect of studying.</p>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                 <div class="chart-container">
-                                    <canvas id="mediatorModeratorChart"></canvas>
+                                    <hr class="my-6 border-slate-200">
+                                    <div class="grid md:grid-cols-2 gap-8 pt-4">
+                                        <!-- Mediator Diagram -->
+                                        <div class="text-center">
+                                            <h5 class="font-semibold text-slate-700 mb-3">Mediator: The "Domino Effect"</h5>
+                                            <div class="flex items-center justify-center space-x-2">
+                                                <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Stress (X)</div>
+                                                <div class="text-2xl font-bold text-slate-400">→</div>
+                                                <div class="p-3 bg-rose-100 text-rose-800 rounded-lg shadow-sm text-sm md:text-base">Burnout (M)</div>
+                                                <div class="text-2xl font-bold text-slate-400">→</div>
+                                                <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Quitting (Y)</div>
+                                            </div>
+                                            <p class="text-sm text-slate-500 mt-3">Burnout is the <em class="font-semibold">mechanism</em> through which stress leads to quitting.</p>
+                                        </div>
+                                        
+                                        <!-- Moderator Diagram -->
+                                        <div class="text-center">
+                                            <h5 class="font-semibold text-slate-700 mb-3">Moderator: The "Dimmer Switch"</h5>
+                                            <div class="relative flex items-center justify-center space-x-2 mt-16 md:mt-0">
+                                                 <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Studying (X)</div>
+                                                 <div class="relative">
+                                                    <div class="text-2xl font-bold text-slate-400 mx-2">→</div>
+                                                    <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-max text-center">
+                                                         <div class="p-3 bg-amber-100 text-amber-800 rounded-lg shadow-sm text-sm md:text-base">Sleep (Mod)</div>
+                                                         <div class="text-2xl font-bold text-slate-400">↓</div>
+                                                    </div>
+                                                 </div>
+                                                 <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Exam Score (Y)</div>
+                                            </div>
+                                            <p class="text-sm text-slate-500 mt-3">Sleep changes the <em class="font-semibold">strength</em> of the relationship between studying and scores.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -470,73 +498,39 @@
         }
         
         function initializeCharts() {
-            // Mediator/Moderator Chart
-            const ctxMediator = document.getElementById('mediatorModeratorChart').getContext('2d');
-            new Chart(ctxMediator, {
-                type: 'bar',
-                data: {
-                    labels: ['Mediator (The "How/Why")', 'Moderator (The "When/For Whom")'],
-                    datasets: [{
-                        label: 'Explains the relationship between X and Y',
-                        data: [10, 0],
-                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
-                        borderWidth: 1,
-                        stack: 'stack0',
-                        barPercentage: 0.5,
-                    }, {
-                        label: 'Changes the strength/direction of X -> Y relationship',
-                        data: [0, 10],
-                        backgroundColor: 'rgba(234, 179, 8, 0.7)',
-                        borderColor: 'rgba(234, 179, 8, 1)',
-                        borderWidth: 1,
-                        stack: 'stack1',
-                        barPercentage: 0.5,
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    indexAxis: 'y',
-                    scales: {
-                        x: { display: false, stacked: true },
-                        y: { stacked: true, grid: { display: false } }
-                    },
-                    plugins: {
-                        legend: { position: 'bottom' },
-                        tooltip: { enabled: false },
-                        title: { display: true, text: 'Conceptual Difference Between Mediator and Moderator' }
-                    }
-                }
-            });
+            // The Mediator/Moderator chart was replaced with a pure HTML/CSS diagram,
+            // so the JavaScript chart initialization for it is no longer needed and was removed to fix an error.
 
             // Commitment Chart
-            const ctxCommitment = document.getElementById('commitmentChart').getContext('2d');
-            new Chart(ctxCommitment, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Affective (Want to stay)', 'Continuance (Need to stay)', 'Normative (Ought to stay)'],
-                    datasets: [{
-                        label: 'Types of Organizational Commitment',
-                        data: [50, 25, 25],
-                        backgroundColor: [
-                            'rgba(14, 165, 233, 0.8)', // sky-500
-                            'rgba(245, 158, 11, 0.8)', // amber-500
-                            'rgba(168, 85, 247, 0.8)'  // purple-500
-                        ],
-                        borderColor: '#f8fafc',
-                        borderWidth: 4
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'bottom' },
-                        title: { display: true, text: 'The Three Components of Organizational Commitment' }
+            const commitmentCanvas = document.getElementById('commitmentChart');
+            if (commitmentCanvas) {
+                const ctxCommitment = commitmentCanvas.getContext('2d');
+                new Chart(ctxCommitment, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Affective (Want to stay)', 'Continuance (Need to stay)', 'Normative (Ought to stay)'],
+                        datasets: [{
+                            label: 'Types of Organizational Commitment',
+                            data: [50, 25, 25],
+                            backgroundColor: [
+                                'rgba(14, 165, 233, 0.8)', // sky-500
+                                'rgba(245, 158, 11, 0.8)', // amber-500
+                                'rgba(168, 85, 247, 0.8)'  // purple-500
+                            ],
+                            borderColor: '#f8fafc',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'bottom' },
+                            title: { display: true, text: 'The Three Components of Organizational Commitment' }
+                        }
                     }
-                }
-            });
+                });
+            }
         }
     </script>
 </body>
