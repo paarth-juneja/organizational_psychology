@@ -1,0 +1,52 @@
+/* ==============================================
+   Components - Reusable UI Elements
+   ============================================== */
+
+/* Navigation States */
+.active-nav {
+    color: var(--color-sky-600);
+    font-weight: 600;
+}
+
+.inactive-nav {
+    color: var(--color-slate-600);
+    border-bottom-color: transparent;
+}
+
+/* Section Toggle Buttons */
+.section-toggle {
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.active-toggle {
+    background-color: var(--color-sky-500);
+    color: white;
+}
+
+.inactive-toggle {
+    background-color: var(--color-slate-200);
+    color: var(--color-slate-600);
+}
+
+/* Accordion Component */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-medium),
+        padding var(--transition-medium);
+    padding: 0 1.5rem;
+}
+
+.accordion-content.open {
+    max-height: 1500px;
+    padding: 1.5rem 1.5rem;
+}
+
+.accordion-button svg {
+    transition: transform var(--transition-fast);
+}
+
+.accordion-button.open svg {
+    transform: rotate(180deg);
+}

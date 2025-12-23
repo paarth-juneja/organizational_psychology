@@ -1,74 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organizational Psychology | Interactive Study Guide</title>
+
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals (Slate, Zinc, Stone) -->
-    <!-- Application Structure Plan: The SPA is designed as an interactive dashboard with three core thematic sections: Foundations, Employee Journey, and Workplace Behaviors. This structure was chosen over a linear chapter-by-chapter layout to help synthesize related concepts (e.g., pairing productive and counterproductive behaviors). The primary interaction is a toggle within each section to switch between 'Key Concepts' and 'Exam Practice'. This allows for focused study, either reviewing theory or actively recalling with past questions. This user flow is more engaging and effective for exam preparation than passively scrolling a long document. -->
-    <!-- Visualization & Content Choices: Key concepts are visualized to enhance understanding. History -> Timeline (HTML/CSS) to show progression. Mediator/Moderator -> Canvas Diagram (Chart.js) to clarify a complex statistical concept. Org. Commitment -> Doughnut Chart (Chart.js) to show components of a whole. These choices turn abstract text into concrete visual models, aiding retention. All visualizations are built with Chart.js on Canvas, adhering to the NO SVG/Mermaid constraint. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-        }
-        .active-nav {
-            color: #0284c7; /* sky-600 */
-            font-weight: 600;
-        }
-        .inactive-nav {
-            color: #475569; /* slate-600 */
-            border-bottom-color: transparent;
-        }
-        .section-toggle {
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .active-toggle {
-            background-color: #0ea5e9; /* sky-500 */
-            color: white;
-        }
-        .inactive-toggle {
-            background-color: #e2e8f0; /* slate-200 */
-            color: #475569; /* slate-600 */
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-            padding: 0 1.5rem;
-        }
-        .accordion-content.open {
-            max-height: 1500px; /* Increased for longer answers */
-            padding: 1.5rem 1.5rem;
-        }
-        .accordion-button svg {
-            transition: transform 0.3s ease-out;
-        }
-        .accordion-button.open svg {
-            transform: rotate(180deg);
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-         @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
-        }
-    </style>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body class="text-slate-800">
 
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
@@ -78,9 +28,12 @@
                     <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">Organizational Psychology</h1>
                 </div>
                 <nav class="hidden md:flex md:space-x-8 mt-3">
-                    <a href="#foundations" class="nav-link inactive-nav font-medium transition-colors text-lg">The Foundations</a>
-                    <a href="#journey" class="nav-link inactive-nav font-medium transition-colors text-lg">The Employee Journey</a>
-                    <a href="#behaviors" class="nav-link inactive-nav font-medium transition-colors text-lg">Workplace Behaviors</a>
+                    <a href="#foundations" class="nav-link inactive-nav font-medium transition-colors text-lg">The
+                        Foundations</a>
+                    <a href="#journey" class="nav-link inactive-nav font-medium transition-colors text-lg">The Employee
+                        Journey</a>
+                    <a href="#behaviors" class="nav-link inactive-nav font-medium transition-colors text-lg">Workplace
+                        Behaviors</a>
                 </nav>
             </div>
         </div>
@@ -91,21 +44,28 @@
         <!-- Section 1: The Foundations -->
         <section id="foundations" class="mb-16 scroll-mt-20">
             <h2 class="text-3xl font-bold text-slate-900 mb-2">The Foundations</h2>
-            <p class="text-lg text-slate-600 mb-6">This section covers what Organizational Psychology is and how psychologists study it. We'll explore the field's historical origins with the pivotal Hawthorne Studies and dive into the core research methods that generate specialized, evidence-based knowledge.</p>
+            <p class="text-lg text-slate-600 mb-6">This section covers what Organizational Psychology is and how
+                psychologists study it. We'll explore the field's historical origins with the pivotal Hawthorne Studies
+                and dive into the core research methods that generate specialized, evidence-based knowledge.</p>
             <div id="foundations-content"></div>
         </section>
 
         <!-- Section 2: The Employee Journey -->
         <section id="journey" class="mb-16 scroll-mt-20">
             <h2 class="text-3xl font-bold text-slate-900 mb-2">The Employee Journey</h2>
-            <p class="text-lg text-slate-600 mb-6">Here, we follow the employee's lifecycle from first contact to full integration. We'll cover how people are attracted to organizations, the critical stages of socialization to become an "insider," and the development of key attitudes like job satisfaction and organizational commitment.</p>
+            <p class="text-lg text-slate-600 mb-6">Here, we follow the employee's lifecycle from first contact to full
+                integration. We'll cover how people are attracted to organizations, the critical stages of socialization
+                to become an "insider," and the development of key attitudes like job satisfaction and organizational
+                commitment.</p>
             <div id="journey-content"></div>
         </section>
 
         <!-- Section 3: Workplace Behaviors -->
         <section id="behaviors" class="scroll-mt-20">
             <h2 class="text-3xl font-bold text-slate-900 mb-2">Workplace Behaviors</h2>
-            <p class="text-lg text-slate-600 mb-6">This section examines the spectrum of employee actions and their impact on the organization. We'll differentiate between positive, productive behaviors like OCBs, and harmful, counterproductive behaviors (CWBs), exploring their causes and how they can be managed.</p>
+            <p class="text-lg text-slate-600 mb-6">This section examines the spectrum of employee actions and their
+                impact on the organization. We'll differentiate between positive, productive behaviors like OCBs, and
+                harmful, counterproductive behaviors (CWBs), exploring their causes and how they can be managed.</p>
             <div id="behaviors-content"></div>
         </section>
 
@@ -117,422 +77,11 @@
         </div>
     </footer>
 
-    <script>
-        const contentData = {
-            foundations: {
-                concepts: `
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Key Definitions</h3>
-                            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 space-y-4">
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-700">Organizational Psychology</h4>
-                                    <p class="text-slate-600">Think of it as the scientific study of how people think, feel, and behave at work. It's not just about observation; it's about applying proven psychological principles to solve real problems (like high employee turnover) and to make work-life better for everyone.</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-700">Scientist-Practitioner Model</h4>
-                                    <p class="text-slate-600">This is the core philosophy of the field. An Org Psychologist has two jobs: 1) The Scientist: They conduct research to discover new knowledge. 2) The Practitioner: They use that scientific knowledge to solve practical problems. Think of a medical doctor who both treats patients and runs clinical trials to find new cures.</p>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-700">Organizational Psychology vs. Organizational Behavior (OB)</h4>
-                                    <p class="text-slate-600">Org Psych is a specialized field within psychology. OB is a broader, interdisciplinary field, often in business schools, that mixes psychology with sociology, economics, and management.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Historical Foundations: A Tale of Two Mindsets</h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-sky-600">1. Scientific Management (Early 1900s)</h4>
-                                    <p><strong class="font-semibold">Pioneer:</strong> Frederick Taylor</p>
-                                    <p><strong class="font-semibold">Mindset:</strong> "Workers are like parts of a machine. They are lazy, motivated only by money, and need to be told exactly how to work in the most efficient way possible."</p>
-                                    <p class="mt-2 text-sm text-slate-500">Methods involved "time-and-motion studies" to find the single "one best way" to perform any task.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-amber-600">2. Human Relations Movement (1930s+)</h4>
-                                    <p><strong class="font-semibold">The Spark:</strong> The Hawthorne Studies</p>
-                                    <p><strong class="font-semibold">Mindset:</strong> "Wait, workers are not machines. They are complex human beings with feelings, social needs, and attitudes that have a huge impact on their performance."</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">The Hawthorne Studies: The Accidental Discovery that Changed Everything</h3>
-                            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                <p class="mb-2"><strong class="font-semibold text-slate-700">The Goal:</strong> To see if changing physical conditions (like lighting) would improve productivity.</p>
-                                <p class="mb-2"><strong class="font-semibold text-slate-700">The Discovery (The "Hawthorne Effect"):</strong> Researchers were baffled when productivity increased regardless of the changes. They concluded performance improved because workers were being watched and given special attention, making them feel important.</p>
-                                <p><strong class="font-semibold text-slate-700">Why It Was a Turning Point:</strong> It was the first major scientific evidence that social and psychological factors could be more powerful than physical or economic factors, launching the Human Relations Movement.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Research Methods and Statistics</h3>
-                            <p class="text-slate-600 mb-6">This chapter is about how we know what we know in Org Psych. Exam questions focus on how we collect data, the basic types of statistics, and how we understand complex relationships between variables.</p>
-                            
-                            <div class="space-y-6">
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg text-slate-700 mb-3">Data Collection Methods</h4>
-                                    <div class="space-y-4">
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Surveys/Questionnaires: The most common method.</h5>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">How it works:</strong> Asking employees to rate their job satisfaction, team dynamics, etc.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Pros:</strong> Cheap, fast, and can get data from many people at once.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Cons:</strong> People might not be honest (social desirability bias), or they may not have good self-insight.</p>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Observational Methods: Watching people work.</h5>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">How it works:</strong> A researcher might sit in on a team meeting to observe communication patterns.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Pros:</strong> You see actual behavior, not just what people say they do.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Cons:</strong> It's time-consuming, and the presence of a researcher might cause people to act differently (the Hawthorne Effect again!).</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg text-slate-700 mb-3">Core Statistical Concepts</h4>
-                                    <div class="space-y-4">
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Descriptive Statistics: Used to paint a picture of the data you have.</h5>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Analogy:</strong> It's like taking a photo and describing what you see: "This is a picture of ten people, and their average height is 5'8"."</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Examples:</strong> Mean (average), median (middle value), standard deviation (how spread out the data is).</p>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Inferential Statistics: Used to make educated guesses (inferences) about a larger group based on a small sample.</h5>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Analogy:</strong> It's like looking at that photo of ten people and saying, "Since the average height in this sample is 5'8", we can infer the average height of the entire population is likely close to 5'8"." It tells you if your findings are likely real or just a fluke.</p>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Correlation</h5>
-                                             <p class="text-slate-600 pl-4">Measures the relationship between two things. A correlation of r = 0.53 means there is a moderate, positive relationship. As one thing goes up, the other tends to go up too.</p>
-                                             <div class="mt-2 ml-4 p-3 bg-amber-100 border-l-4 border-amber-500 rounded text-amber-900">
-                                                <strong class="font-semibold">CRITICAL RULE:</strong> Correlation does not equal causation! A famous example is that ice cream sales and shark attacks are positively correlated. This doesn't mean eating ice cream causes shark attacks. The hidden third factor (the cause) is hot weather, which leads to more people swimming and more people eating ice cream.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                     <h4 class="font-bold text-lg text-slate-700 mb-3">Mediator vs. Moderator Variables</h4>
-                                     <p class="text-slate-600 mb-4">This is a tricky but frequently tested concept.</p>
-                                     <div class="space-y-4">
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Mediator Variable (The "Domino Effect")</h5>
-                                            <p class="text-slate-600 pl-4">It explains the <strong class="font-medium">how or why</strong> of a relationship. It's the middle domino in a chain reaction.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Structure:</strong> X → Mediator → Y (X causes the Mediator, which in turn causes Y).</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Simple Example:</strong> A stressful job (X) leads to burnout (Mediator), which then leads to quitting (Y). Burnout is the mediator that explains how stress leads to quitting.</p>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-semibold text-slate-700">Moderator Variable (The "Dimmer Switch")</h5>
-                                            <p class="text-slate-600 pl-4">It changes the <strong class="font-medium">strength or direction</strong> of a relationship. It doesn't cause the outcome, but it can make the effect stronger or weaker.</p>
-                                            <p class="text-slate-600 pl-4"><strong class="font-medium">Simple Example:</strong> The relationship between studying (X) and exam scores (Y) is moderated by sleep. If you get enough sleep (Moderator), the relationship is strong (more studying = much higher score). If you pull an all-nighter and get no sleep, the relationship becomes weak or even disappears (more studying might not help your score at all). Sleep acts as a dimmer switch on the effect of studying.</p>
-                                        </div>
-                                    </div>
-                                    <hr class="my-6 border-slate-200">
-                                    <div class="grid md:grid-cols-2 gap-8 pt-4">
-                                        <!-- Mediator Diagram -->
-                                        <div class="text-center">
-                                            <h5 class="font-semibold text-slate-700 mb-3">Mediator: The "Domino Effect"</h5>
-                                            <div class="flex items-center justify-center space-x-2">
-                                                <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Stress (X)</div>
-                                                <div class="text-2xl font-bold text-slate-400">→</div>
-                                                <div class="p-3 bg-rose-100 text-rose-800 rounded-lg shadow-sm text-sm md:text-base">Burnout (M)</div>
-                                                <div class="text-2xl font-bold text-slate-400">→</div>
-                                                <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Quitting (Y)</div>
-                                            </div>
-                                            <p class="text-sm text-slate-500 mt-3">Burnout is the <em class="font-semibold">mechanism</em> through which stress leads to quitting.</p>
-                                        </div>
-                                        
-                                        <!-- Moderator Diagram -->
-                                        <div class="text-center">
-                                            <h5 class="font-semibold text-slate-700 mb-3">Moderator: The "Dimmer Switch"</h5>
-                                            <div class="relative flex items-center justify-center space-x-2 mt-16 md:mt-0">
-                                                 <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Studying (X)</div>
-                                                 <div class="relative">
-                                                    <div class="text-2xl font-bold text-slate-400 mx-2">→</div>
-                                                    <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-max text-center">
-                                                         <div class="p-3 bg-amber-100 text-amber-800 rounded-lg shadow-sm text-sm md:text-base">Sleep (Mod)</div>
-                                                         <div class="text-2xl font-bold text-slate-400">↓</div>
-                                                    </div>
-                                                 </div>
-                                                 <div class="p-3 bg-sky-100 text-sky-800 rounded-lg shadow-sm text-sm md:text-base">Exam Score (Y)</div>
-                                            </div>
-                                            <p class="text-sm text-slate-500 mt-3">Sleep changes the <em class="font-semibold">strength</em> of the relationship between studying and scores.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                practice: [
-                    { q: "Do you see a difference between scientific management and the human relations movement?", meta: "2023-24 | Closed Book | 6 Marks", a: "Yes, there is a fundamental and profound difference between scientific management and the human relations movement. They represent two opposing philosophies about workers and the nature of work itself.<br><br><strong>Core Difference in Perspective:</strong> Scientific management viewed workers as mechanistic and interchangeable parts of a production process, primarily motivated by economic incentives (money). The human relations movement, in contrast, viewed workers as complex social beings with psychological needs, attitudes, and feelings that critically impact their performance.<br><br><strong>Focus:</strong> The focus of scientific management was on <strong>efficiency, standardization, and productivity</strong>. It sought the \"one best way\" to perform a task to maximize output. The focus of the human relations movement was on <strong>employee morale, social dynamics, and satisfaction</strong>. It believed that a happy and socially connected worker would be a more productive worker.<br><br><strong>Analogy:</strong> Scientific management is like trying to optimize a machine by oiling its gears and increasing its speed. The human relations movement is like trying to nurture a plant by ensuring it has not only water (pay) but also sunlight (recognition) and a healthy environment (positive social relations). The Hawthorne studies were the key pivot point that forced management thinking to shift from the machine analogy to a more humanistic, organic view of the worker." },
-                    { q: "Define Hawthorne effect. How do you interpret the experimentations conducted at the Hawthorne plant? Comment.", meta: "2023-24 & 2022-23 | Closed Book | 6-10 Marks", a: "The <strong>Hawthorne effect</strong> is a term used to describe a phenomenon where individuals modify or improve an aspect of their behavior in response to their awareness of being observed, not in response to the specific experimental manipulation.<br><br>My interpretation of the experiments at the Hawthorne plant is that they were a landmark, albeit somewhat accidental, discovery that fundamentally reshaped our understanding of workplace motivation. The researchers went in with a \"scientific management\" mindset, expecting to find a direct link between physical conditions (like lighting) and productivity. Instead, they stumbled upon the power of human psychology.<br><br>The key takeaway is that the workers' productivity didn't increase because of the changes in the physical environment, but because the act of being studied made them feel special, valued, and important. They formed a cohesive social group, enjoyed the increased attention from supervisors and researchers, and this newfound sense of social satisfaction and importance was the true driver of their increased output. Therefore, the Hawthorne experiments represent the historic shift from viewing employees as cogs in a machine to viewing them as social beings whose feelings and relationships are critical to organizational success." },
-                    { q: "Distinguish between 'Organizational Psychology' & 'Organizational Behavior'.", meta: "2017-18 | Closed Book | 5 Marks", a: "While Organizational Psychology (Org Psych) and Organizational Behavior (OB) study similar topics, their primary distinction lies in their academic origins, scope, and approach.<br><br><strong>Academic Home & Approach:</strong> Organizational Psychology is a subfield of <strong>psychology</strong>. As such, it is deeply rooted in psychological theory and the rigorous scientific methods of psychological research. Its focus is on applying the principles of psychology specifically to the workplace. Organizational Behavior, on the other hand, is an <strong>interdisciplinary field</strong> typically housed in <strong>business schools</strong>.<br><br><strong>Scope:</strong> OB draws on a wider range of disciplines beyond psychology, including sociology (to understand group dynamics and organizational structure), anthropology (for organizational culture), and management theory. Because of this, OB often takes a more macro-level view, looking at how entire organizations function, whereas Org Psych traditionally has a stronger focus on the individual and small group level (micro-level).<br><br>In essence, Org Psych is a field of psychology applied to work, while OB is an interdisciplinary management field that uses psychology as one of its primary tools." },
-                    { q: "Formulate a unique, crisp definition of 'Organizational Psychology' in your own words. Critically reflect upon the crucial events that played an instrumental role in shaping the field...Do you think that the famous Hawthorne experiments...played an instrumental role...? If so, how?", meta: "2021-22 | Open Book | 10 Marks", a: "In my own words, Organizational Psychology is the application of the scientific method to understand the intricate human dynamics of the workplace, with the dual goals of enhancing organizational effectiveness and promoting employee well-being. It is a field dedicated to making work both more productive and more humane.<br><br>Several crucial events shaped the field. The work of early industrial psychologists on employee selection for World War I was foundational. The rise of <strong>Frederick Taylor's Scientific Management</strong> was also instrumental, not because it was correct, but because its rigid, mechanistic view of workers created the context against which a more humanistic approach could emerge.<br><br>The <strong>Hawthorne experiments</strong> were arguably the single most instrumental event in shaping the \"organizational\" side of the field. They played a pivotal role because they were the first major scientific challenge to the dominance of Scientific Management. The researchers expected to find that physical changes would affect productivity, but instead found that social and psychological factors were supreme. The \"Hawthorne effect\" showed that simply paying attention to workers and making them feel valued could drastically increase output. This discovery single-handedly launched the <strong>Human Relations Movement</strong> and shifted the focus of the entire field towards vital topics that are now central to Org Psych, such as motivation, leadership, communication, and job satisfaction." },
-                    { q: "Recalling from initial classroom discussions, conjure your own definition of organizational psychology. Reflect upon the important events that played an instrumental role in shaping the field and highlight the various topics which emerged through the discourse.", meta: "2024-25 | Closed Book | 10 Marks", a: "My definition of organizational psychology is that it is the science of people at work. It systematically studies the reciprocal relationship between individuals and their work environment to unlock human potential, improve organizational performance, and create a healthier, more meaningful work experience.<br><br>Reflecting on the field's history, the instrumental events represent a clear evolution in thought. The initial phase was dominated by <strong>Scientific Management</strong>, which gave rise to topics like job analysis and performance measurement, viewing workers as parts of a system to be optimized. The pivotal event was the <strong>Hawthorne Studies</strong>, which acted as a paradigm shift. This event discredited the purely mechanistic view and gave birth to the <strong>Human Relations Movement</strong>.<br><br>The discourse that emerged from this shift created the core of modern organizational psychology. Topics that emerged include:<br><ul><li><strong>Motivation:</strong> How do we motivate employees if not just by money?</li><li><strong>Leadership:</strong> What style of supervision makes employees feel valued?</li><li><strong>Job Satisfaction:</strong> How do employee attitudes affect their performance?</li><li><strong>Group Dynamics:</strong> How do social relationships at work influence behavior?</li></ul>These topics, all stemming from the revelations of the Hawthorne era, are now the central pillars of the field." },
-                    { q: "Critically reflect the major factors that led to the development of the field...keeping in mind the role played by the famous Hawthorne experiments. Do you think that the knowledge generated in this domain is a specialized knowledge...unlike common-sensical knowledge...Comment.", meta: "2024 | Open Book | 12 Marks", a: "The development of organizational psychology was driven by the practical needs of industrialization and the evolution of management thought. The major factor was the shift from the purely efficiency-driven <strong>Scientific Management</strong> to the more human-centric <strong>Human Relations Movement</strong>, with the Hawthorne experiments acting as the critical catalyst for this change. The experiments famously demonstrated that social and psychological factors—like morale and feeling valued—had a greater impact on productivity than physical conditions. This finding opened the floodgates for research into leadership, motivation, and job satisfaction.<br><br>Yes, the knowledge generated in this domain is absolutely a <strong>specialized knowledge</strong>, distinct from common sense. Common sense can be contradictory (e.g., \"absence makes the heart grow fonder\" vs. \"out of sight, out of mind\") and is often based on personal bias and anecdotal evidence. Organizational psychology, in contrast, uses the <strong>scientific method</strong> to systematically test hypotheses and build evidence-based theories.<br><br>For example, common sense might suggest that a happy worker is always a productive worker. Org Psych research, however, shows a more complex relationship: the correlation between job satisfaction and performance is moderate, not perfect. Specialized knowledge allows us to understand the nuances—<em>when</em> satisfaction leads to performance, what <em>other factors</em> (like personality or resources) are involved, and what the causal direction is. It requires goal-directed, systematic research to move beyond simplistic, common-sense assumptions to develop reliable and valid insights that can be effectively applied in organizations." },
-                    { q: "Define Hawthorne Effect in your own words and elaborate on the processes that led to the formulation of this effect.", meta: "2022-23 | Closed Book | 10 Marks", a: "In my own words, the Hawthorne Effect is a form of reactivity whereby individuals in an experiment don't behave naturally, but instead change their behavior simply because they are aware that they are part of a study and are being given special attention.<br><br>The processes that led to its formulation occurred during the Hawthorne Studies (1924-1932):<br>1.  <strong>Initial Experiment (The Illumination Studies):</strong> Researchers manipulated lighting levels for a group of workers, expecting to see a direct relationship between brightness and productivity.<br>2.  <strong>Anomalous Results:</strong> They found that productivity increased when lighting was improved, but it also increased when lighting was made worse. This contradicted their initial hypothesis and showed that the variable they were manipulating was not the cause of the change.<br>3.  <strong>Further Investigation (The Relay Assembly Test Room):</strong> Researchers then isolated a small group of women and systematically changed various work conditions (rest breaks, work hours, incentives). Again, productivity almost always went up, regardless of the change being made.<br>4.  <strong>The Conclusion (Formulation of the Effect):</strong> Through interviews, the researchers discovered that the workers felt a sense of pride and importance because they had been singled out for the study. They enjoyed the friendly supervision and the feeling of a special, cohesive group. The researchers concluded that this increased morale and social satisfaction—the psychological effects of being studied—were the true causes of the increased productivity. This realization was formulated as the \"Hawthorne Effect.\"" },
-                    { q: "Distinguish between Moderator and Mediator variables.", meta: "2023-24 | Closed Book | 6 Marks", a: "Moderator and Mediator variables are both third variables that help us understand a more complex relationship between an independent variable (X) and a dependent variable (Y), but they do so in fundamentally different ways.<br><br><strong>Mediator:</strong> A mediator variable answers the question of <strong>\"how\" or \"why\"</strong> X leads to Y. It explains the mechanism or the process through which the relationship occurs. It is like a causal chain where X influences the Mediator, and the Mediator, in turn, influences Y. For example, if we find that a positive work environment (X) leads to higher job performance (Y), the mediator might be job satisfaction. The positive environment leads to higher satisfaction, and that higher satisfaction is what actually leads to better performance.<br><br><strong>Moderator:</strong> A moderator variable answers the question of <strong>\"when\" or \"for whom\"</strong> X is related to Y. It influences the strength or direction of the relationship between X and Y. It's like a \"dimmer switch\" that can turn the effect up or down. For example, the relationship between stress (X) and performance (Y) might be moderated by years of experience. For new employees, the negative effect of stress on performance is very strong. For highly experienced employees, who have better coping mechanisms, the relationship might be much weaker or non-existent.<br><br>In short, a mediator is a <em>mechanism</em>, while a moderator is a <em>condition</em>." },
-                    { q: "Elucidate ways of data collection in the social sciences domain? Is there a difference between descriptive and inferential statistics? What kinds of statistical methods are used... Elaborate any two.", meta: "2024-25 | Closed Book | 10 Marks", a: "In the social sciences, including organizational psychology, there are several ways to collect data. The most common include <strong>surveys/questionnaires</strong>, where participants self-report their attitudes and behaviors; <strong>observational methods</strong>, where researchers watch and record behavior as it naturally occurs; and <strong>experiments</strong>, where researchers manipulate one variable to see its effect on another.<br><br>Yes, there is a clear difference between descriptive and inferential statistics:<br><ul><li><strong>Descriptive Statistics</strong> are used to summarize and describe the basic features of a dataset. They provide simple summaries about the sample and the measures. Examples include the mean (average), median, and standard deviation. They simply describe what the data shows.</li><li><strong>Inferential Statistics</strong> are used to make inferences and draw conclusions about a larger population from which the sample data was drawn. They help us determine if our findings are \"statistically significant\" (i.e., not just due to random chance).</li></ul><br>Two common statistical methods used in organizational psychology are:<br>1.  <strong>Correlation:</strong> This is a method used to measure the strength and direction of the linear relationship between two variables. For example, a researcher might want to know if there is a relationship between job satisfaction and employee absenteeism. A correlation coefficient (r) ranges from -1 to +1. A positive value means as one variable increases, so does the other. A negative value means as one increases, the other decreases.<br>2.  <strong>Analysis of Variance (ANOVA):</strong> This is an inferential statistical method used to test for differences in the mean scores of two or more groups. For example, a researcher might use ANOVA to see if there is a significant difference in the average job satisfaction scores among employees in three different departments (e.g., Sales, HR, and IT). It helps determine if the observed differences between groups are real or just due to random sampling variability." }
-                ]
-            },
-            journey: {
-                concepts: `
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Organizational Socialization: The Process of Becoming an "Insider"</h3>
-                             <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                <p class="mb-4 text-slate-600">Socialization is how a newcomer learns the ropes and adapts to the company's culture. It's a journey with three key stages:</p>
-                                <div class="grid md:grid-cols-3 gap-6 text-center">
-                                    <div class="border border-slate-200 p-4 rounded-lg">
-                                        <div class="text-2xl font-bold text-sky-500 mb-2">1</div>
-                                        <h4 class="font-bold text-lg mb-2 text-slate-800">Anticipatory Socialization</h4>
-                                        <p class="text-slate-600">This happens <strong>before</strong> your first day. It's all about forming expectations. You're reading the company's website, practicing for the interview, and imagining what the job will be like.</p>
-                                    </div>
-                                    <div class="border border-slate-200 p-4 rounded-lg">
-                                        <div class="text-2xl font-bold text-sky-500 mb-2">2</div>
-                                        <h4 class="font-bold text-lg mb-2 text-slate-800">Encounter</h4>
-                                        <p class="text-slate-600">This is from your first day onward. You come face-to-face with the reality of the job and the company. If reality doesn't match your expectations, you can experience <strong>"reality shock."</strong></p>
-                                    </div>
-                                    <div class="border border-slate-200 p-4 rounded-lg">
-                                        <div class="text-2xl font-bold text-sky-500 mb-2">3</div>
-                                        <h4 class="font-bold text-lg mb-2 text-slate-800">Metamorphosis</h4>
-                                        <p class="text-slate-600">After a few weeks or months, you've started to figure things out. You've learned the unwritten rules, you feel comfortable with your colleagues, and you've transitioned from being a "newbie" to being an accepted part of the team.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Key Attitudes: The Job vs. The Company</h3>
-                            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 space-y-4">
-                                <p><strong class="font-semibold text-slate-700">Job Satisfaction:</strong> How an employee feels about their <strong>job</strong>. It's a positive emotional state that comes from evaluating one's work.</p>
-                                <p><strong class="font-semibold text-slate-700">Organizational Commitment:</strong> How an employee feels about their <strong>organization as a whole</strong>. It's a psychological bond that makes them want to stay.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Organizational Commitment: The Employee's Bond</h3>
-                             <div class="chart-container">
-                                <canvas id="commitmentChart"></canvas>
-                            </div>
-                        </div>
-                         <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Motivation Theories</h3>
-                            <div class="space-y-6">
-                               <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-sky-600">Herzberg's Two-Factor Theory</h4>
-                                    <p class="mb-2"><strong>Hygiene Factors:</strong> Basic job elements that don't make you happy, but their absence makes you very <em>unhappy</em> (e.g., fair salary, safe working conditions). Think of it like plumbing: you don't feel overjoyed by it daily, but you're very dissatisfied if it breaks.</p>
-                                    <p><strong>Motivators:</strong> Things that actually create satisfaction and drive (e.g., recognition, responsibility, challenging work).</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-sky-600">Vroom's Expectancy (VIE) Theory (The Cognitive Approach)</h4>
-                                    <p class="mb-2">This theory says motivation is a conscious, rational calculation: <code class="bg-slate-200 text-sm p-1 rounded">Motivation = Expectancy × Instrumentality × Valence</code>.</p>
-                                    <ul class="list-disc list-inside space-y-1 text-slate-600">
-                                        <li><strong>Expectancy (Effort → Performance):</strong> "If I try, can I do it?"</li>
-                                        <li><strong>Instrumentality (Performance → Outcome):</strong> "If I do it, will I get a reward?"</li>
-                                        <li><strong>Valence (Value of Outcome):</strong> "Do I even want the reward?"</li>
-                                    </ul>
-                                     <p class="mt-2 text-sm text-slate-500">If the answer to any of these is "no" (or zero), motivation will be zero.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                practice: [
-                    { q: "What would be your strategy to socialize in your respective workplaces? Elaborate on the process with the help of a theoretical model of organizational socialization.", meta: "2022-23 | Closed Book | 10 Marks", a: "My strategy to socialize in a new workplace would be proactive and structured, guided by the three-stage theoretical model of organizational socialization: Anticipatory Socialization, Encounter, and Metamorphosis.<br><br>1.  <strong>Anticipatory Socialization (Before Joining):</strong> My strategy would begin before my first day. I would conduct thorough research on the company's culture, values, and recent projects. During the interview process, I would ask specific questions about team dynamics, communication styles, and performance expectations. This would help me form realistic expectations, minimizing the potential for \"reality shock.\"<br><br>2.  <strong>Encounter (First Days/Weeks):</strong> Once I join, my focus would be on active learning and relationship building. I would seek out information proactively by asking questions rather than waiting for it to be given. I would identify key players and informal leaders in my team and build relationships with them through informal chats, lunch, etc. I would also seek early feedback from my manager to understand my role and performance expectations clearly.<br><br>3.  <strong>Metamorphosis (First Few Months):</strong> In this final stage, my goal is to transition from a newcomer to an integrated member of the team. I would demonstrate my competence by mastering my tasks and begin contributing ideas. I would also show my commitment to the team and organization by adopting its norms and values, while still maintaining my own identity. By proactively managing each stage, my strategy is to accelerate the socialization process and become a productive, well-integrated employee as quickly as possible." },
-                    { q: "'Organizational psychologists say that a serial approach to socialization may perpetuate a culture of mediocrity within the organization'. Justify the statement...", meta: "2024-25 | Closed Book | 10 Marks", a: "This statement is justified because a purely <strong>serial approach to socialization</strong>, where newcomers are exclusively mentored and trained by experienced predecessors, can act as a powerful force for maintaining the status quo and stifling innovation, thus perpetuating mediocrity.<br><br>This can be explained through the <strong>Metamorphosis</strong> stage of organizational socialization. The goal of this stage is for the newcomer to become an accepted insider. In a serial socialization process, the path to acceptance is to perfectly replicate the attitudes, behaviors, and methods of the mentor. The newcomer learns that \"the way to succeed here is to do things exactly how my predecessor did them.\"<br><br><strong>Exemplification:</strong><br>Imagine a software development team that uses an outdated programming language. A new graduate, trained in the latest, most efficient languages, joins the team. In a serial socialization process, a senior developer, who is an expert in the old language, is assigned to mentor the newcomer. The mentor teaches the newcomer the team's \"way of doing things,\" emphasizing the old language and dismissing the new ones as \"untested fads.\" To fit in and be seen as competent (i.e., to complete the metamorphosis stage), the newcomer abandons their new skills and adopts the old methods.<br><br>As a result, the team never evolves. It continues to use inefficient methods because the socialization process is designed to replicate the past, not innovate for the future. This creates a self-perpetuating cycle of mediocrity, where fresh ideas and skills brought in by newcomers are filtered out in favor of conformity." },
-                    { q: "ABC, after graduating from BITS Pilani, got a dream job...what do you think he should do? Suggest the fundamental steps and tactics...to adjust...and emerge as a productive (efficient) employee...", meta: "2021-22 | Open Book | 10 Marks", a: "Once ABC becomes a formal member of his organization, he should adopt a proactive socialization strategy to adjust effectively and establish himself as a productive employee. The fundamental steps and tactics he should use are:<br><br>1.  <strong>Information Seeking:</strong> ABC should not passively wait for information. He should proactively ask questions to clarify his role, responsibilities, and performance expectations. He should also seek information about the company's culture, politics, and social norms.<br>2.  <strong>Networking and Relationship Building:</strong> He should make an effort to get to know his colleagues and manager on a professional and personal level. This includes identifying influential people and building a supportive network. This will help him feel more connected and provide him with resources when he needs help.<br>3.  <strong>Seeking Feedback:</strong> ABC should actively seek feedback on his performance from his manager and even trusted peers. This demonstrates a desire to learn and improve, and it helps him quickly align his performance with organizational expectations, thus accelerating his journey through the \"Encounter\" stage.<br>4.  <strong>Observing and Adapting:</strong> He should pay close attention to the behaviors of successful veterans in the company. By observing how they communicate, handle challenges, and navigate the social landscape, he can learn the \"unwritten rules\" of the organization and adapt his own behavior to fit in, successfully completing the \"Metamorphosis\" stage.<br>By combining these tactics, ABC can take control of his own socialization process, reduce uncertainty, and quickly become a valued and productive member of the team." },
-                    { q: "Imagine that after completing your graduation, you enter the world of work...what kind of socialization tactics would you utilize to get yourself recognized...?", meta: "2024 | Open Book | 12 Marks", a: "Upon entering my preferred company, I would utilize a blend of proactive socialization tactics and personal branding practices to get recognized.<br><br><strong>Practical Socialization Tactics:</strong><ul><li><strong>Be Proactively Inquisitive:</strong> I would immediately schedule brief one-on-one meetings with each team member to understand their roles and how I can best support them. I would ask my manager, \"What does a successful first month look like in this role?\" to establish clear expectations.</li><li><strong>Find an Early Win:</strong> I would look for a small, manageable project or task that I can complete quickly and effectively. Delivering a tangible result early on is a powerful way to demonstrate competence and build credibility.</li><li><strong>Become the \"Go-To\" for Something:</strong> I would identify a skill I have that may be unique or underdeveloped on the team (e.g., a new software, a data visualization technique) and offer to help others with it. This makes me a valuable resource.</li></ul><strong>Imbuing Practices for Recognition (Beyond Theory):</strong><ul><li><strong>Active Listening in Meetings:</strong> Instead of trying to talk a lot to seem smart, I would practice active listening and ask insightful questions. Summarizing a complex discussion and asking a clarifying question often gets more positive recognition than adding another opinion.</li><li><strong>\"Managing Up\":</strong> I would provide my manager with regular, concise updates on my progress without being asked. This shows reliability and makes their job easier, which is always appreciated and recognized.</li><li><strong>Visibility on a Non-Critical Project:</strong> I would volunteer for a cross-functional, low-stakes internal project, like organizing a company event or joining a committee. This is a fantastic way to build a network outside of my immediate team and gain positive visibility with senior leaders in a non-threatening context.</li></ul>" },
-                    { q: "...what sort of socialization tactics would you utilize? Explain the best case scenario (in theoretical sense) that suits this situation.", meta: "2017-18 | Closed Book | 5 Marks", a: "Upon entering my preferred work domain, I would utilize proactive socialization tactics centered on reducing uncertainty and building relationships. Key tactics would include <strong>information seeking</strong>, <strong>feedback seeking</strong>, and <strong>relationship building</strong>.<br><br>The best-case scenario in a theoretical sense would be an organizational socialization process that is both <strong>formal and collective</strong>, with a <strong>serial</strong> and <strong>investiture</strong> approach.<br><ul><li><strong>Formal & Collective:</strong> The company would have a structured onboarding program where all new hires go through the experience together. This builds a strong peer network from day one.</li><li><strong>Serial:</strong> I would be assigned an experienced mentor (a role model) who guides me through the process, which is the \"serial\" tactic. This speeds up learning the ropes.</li><li><strong>Investiture:</strong> The process would be an \"investiture\" tactic, meaning it is designed to affirm my existing skills and identity. The organization would be saying, \"We hired you for who you are, and we want to build on your strengths,\" rather than an \"divestiture\" process that tries to break me down and remold me.</li></ul>This combination of tactics creates the best-case scenario because it provides structure, social support, clear guidance, and personal affirmation, leading to faster adjustment, higher job satisfaction, and stronger organizational commitment." },
-                    { q: "Explain the cognitive approach to understanding the concept of motivation at workplaces? Cite the differences with examples, if possible.", meta: "2022-23 | Closed Book | 10 Marks", a: "The cognitive approach to understanding motivation proposes that motivation is not a result of unconscious drives or simple responses to the environment, but rather a conscious, rational, and deliberate process of thought. These theories emphasize that employees are thinking beings who make choices about their behavior based on their beliefs, expectations, and values.<br><br>The prime example of a cognitive motivation theory is <strong>Vroom's Expectancy Theory (VIE Theory)</strong>. It argues that an employee's motivation to exert effort is a result of a mental calculation involving three key cognitions:<br>1.  <strong>Expectancy:</strong> The belief that one's effort will lead to successful performance.<br>2.  <strong>Instrumentality:</strong> The belief that successful performance will lead to certain outcomes or rewards.<br>3.  <strong>Valence:</strong> The perceived value or attractiveness of those outcomes.<br><br><strong>Difference from other approaches:</strong> This cognitive approach differs significantly from earlier theories like Maslow's Hierarchy of Needs, which is a <strong>needs-based theory</strong>. Needs-based theories suggest that motivation comes from an innate, often subconscious, desire to fulfill a hierarchy of needs (e.g., safety, esteem).<br><br><strong>Example:</strong><br>An employee is offered a $5,000 bonus (outcome) if they can increase their sales by 20% (performance).<br>A <strong>needs-based approach</strong> might simply suggest that the bonus appeals to the employee's need for security or esteem.<br>The <strong>cognitive approach (VIE Theory)</strong> would analyze the employee's thought process:<br><ul><li><strong>Expectancy:</strong> Does the employee believe, \"If I work extra hours and make more calls, can I realistically increase my sales by 20%?\" If they think the goal is impossible, expectancy is zero, and motivation is zero.</li><li><strong>Instrumentality:</strong> Does the employee believe, \"If I actually hit the 20% target, will my manager actually give me the bonus, or will they find some excuse not to?\" If they don't trust management to deliver, instrumentality is zero, and motivation is zero.</li><li><strong>Valence:</strong> \"Is $5,000 actually important to me right now?\" If the employee is already wealthy or values free time more than money, the valence might be low, reducing motivation.</li></ul>The cognitive approach shows that motivation is a complex calculation, and a breakdown in any of these beliefs can lead to a lack of motivation, even if the reward is appealing." },
-                    { q: "What is your opinion about the concept of job satisfaction? Explain the concept with... theoretical approaches... can we measure job satisfaction objectively...? Is job satisfaction different from organizational commitment?", meta: "2024-25 | Closed Book | 10 Marks", a: "My opinion is that job satisfaction is a critical workplace attitude that serves as a key indicator of organizational health and employee well-being. It is a multifaceted concept representing an employee's overall positive emotional state resulting from the appraisal of their job.<br><br><strong>Theoretical Approaches:</strong><ul><li><strong>Herzberg's Two-Factor Theory</strong> provides a useful lens, suggesting that satisfaction is not a single continuum. It posits that certain factors (\"Hygiene factors\" like pay and work conditions) can cause dissatisfaction if they are absent, but do not lead to true satisfaction. True satisfaction comes from \"Motivators\" like challenging work, recognition, and responsibility.</li><li><strong>Job Characteristics Theory</strong> suggests that satisfaction is determined by the inherent nature of the work itself, specifically five core job characteristics: skill variety, task identity, task significance, autonomy, and feedback.</li></ul><strong>Objective Measurement:</strong><br>Measuring job satisfaction completely objectively is very difficult because it is, by definition, a subjective feeling. However, we can measure it in a reliable and valid way using standardized, well-researched survey instruments like the Job Descriptive Index (JDI) or the Minnesota Satisfaction Questionnaire (MSQ). While the input is subjective (an employee's ratings), the scoring and interpretation are standardized, making it as objective as possible for a psychological construct. We can also look at objective behavioral indicators that are correlated with satisfaction, such as absenteeism and turnover rates.<br><br><strong>Difference from Organizational Commitment:</strong><br>Yes, job satisfaction is different from organizational commitment. The key difference is the <strong>target</strong> of the attitude.<br><ul><li><strong>Job Satisfaction</strong> is focused specifically on the <strong>job</strong> itself—the tasks, the daily work, the duties.</li><li><strong>Organizational Commitment</strong> is focused on the <strong>organization as a whole</strong>—its values, its goals, and a desire to remain a member.</li></ul>An employee can be satisfied with their job (they enjoy the work they do) but not committed to the organization (they don't like the company culture and would leave for a similar job elsewhere). Conversely, an employee could be very committed to the organization's mission but be dissatisfied with their specific, current role. They are distinct, though often related, attitudes." },
-                    { q: "How do job characteristics contribute to motivation? Elaborate your understanding.", meta: "2023-24 | Closed Book | 6 Marks", a: "Job characteristics contribute to motivation by influencing an employee's internal psychological state, making the work itself intrinsically rewarding. According to the Job Characteristics Model by Hackman and Oldham, five core job characteristics lead to three critical psychological states, which in turn lead to higher internal motivation.<br><br>1.  <strong>Core Job Characteristics:</strong><br><ul><li><strong>Skill Variety:</strong> The degree to which a job requires a variety of different skills.</li><li><strong>Task Identity:</strong> The degree to which a job requires completion of a whole, identifiable piece of work.</li><li><strong>Task Significance:</strong> The degree to which the job has a substantial impact on the lives of other people.</li><li><strong>Autonomy:</strong> The degree of freedom and independence the employee has in scheduling and carrying out their work.</li><li><strong>Feedback:</strong> The degree to which the employee receives clear and direct information about their performance.</li></ul>2.  <strong>Contribution to Motivation:</strong><br><ul><li>Skill variety, task identity, and task significance combine to make the work feel more <strong>meaningful</strong>.</li><li>Autonomy makes the employee feel a greater sense of <strong>personal responsibility</strong> for the outcomes of their work.</li><li>Feedback provides the employee with <strong>knowledge of the actual results</strong> of their work activities.</li></ul>When a job is designed to be high in these characteristics, employees experience these positive psychological states, which leads to high intrinsic motivation, job satisfaction, and performance. In essence, the job itself becomes the motivator." },
-                    { q: "XYZ lost his job...after seven months...got placed in a better organization... Do you see the role of motivation...? Justify your answer by drawing support from the most applicable theory...", meta: "2021-22 | Open Book | 10 Marks", a: "Yes, the role of motivation is central to the life event of this person. The most applicable theory of motivation that fits this situation is <strong>Maslow's Hierarchy of Needs</strong>.<br><br><strong>Justification using Maslow's Hierarchy:</strong><br>1.  <strong>Loss of Job and Deprivation of Needs:</strong> When XYZ lost his job, he was immediately pushed down to the lower levels of Maslow's hierarchy. He lost his source of income, threatening his <strong>Physiological Needs</strong> (food, shelter) and <strong>Safety Needs</strong> (security, stability). During his seven months of unemployment, his primary motivation would have been a powerful drive to fulfill these deficient, fundamental needs.<br>2.  <strong>New Job and Fulfillment of Needs:</strong> Getting a new, better job with a higher salary, perks, and incentives directly addresses these lower-level needs. The better salary secures his physiological needs, while the job itself provides stability and security, fulfilling his safety needs.<br>3.  <strong>Moving Up the Hierarchy:</strong> The new job doesn't just stop there. It likely provides a workplace and colleagues, addressing his <strong>Social Needs</strong> (belongingness). The perks and better structure might provide status and recognition, fulfilling <strong>Esteem Needs</strong>. The fact that he persevered through unemployment to find a better job also contributes to his sense of competence and esteem. His motivation will now likely shift from fulfilling basic needs to pursuing these higher-level ones.<br><br><strong>Novel Definition of Motivation:</strong> Motivation is the internal psychological force that directs, energizes, and sustains goal-oriented behavior, stemming from the dynamic interplay between an individual's unmet needs, cognitive beliefs, and the perceived value of potential outcomes." },
-                    { q: "After having read and understood the various theories of individual motivation...suggest the implications...And, analyze the factors that the organizational authorities should deliberate upon to motivate...employees...", meta: "2024 | Open Book | 12 Marks", a: "The primary implication of motivation theories is that motivation is not a one-size-fits-all concept; it is complex and individually driven. Organizations cannot simply assume money is the only motivator. They must understand that employees have a range of needs, cognitive processes, and desires for fairness that all contribute to their motivation.<br><br>Based on this, organizational authorities should deliberate upon the following factors:<br>1.  <strong>Fairness and Equity (Equity Theory):</strong> Authorities must ensure that compensation and reward systems are perceived as fair. Employees mentally compare their input/outcome ratio with that of their peers. A perception of inequity is a powerful demotivator.<br>2.  <strong>Goal Setting (Goal-Setting Theory):</strong> Managers should work with employees to set goals that are <strong>S</strong>pecific, <strong>M</strong>easurable, <strong>A</strong>ttainable, <strong>R</strong>elevant, and <strong>T</strong>ime-bound (SMART). Clear and challenging goals are one of the most powerful motivators of performance.<br>3.  <strong>Job Design (Job Characteristics Model):</strong> Authorities should design jobs to be intrinsically motivating. This means creating roles that have skill variety, autonomy, task significance, and provide regular feedback. A boring, monotonous job will demotivate even a highly paid employee.<br>4.  <strong>Connecting Performance and Rewards (Expectancy Theory):</strong> It is not enough to offer rewards. Authorities must ensure employees believe (a) their effort will lead to performance (Expectancy) and (b) that performance will genuinely be rewarded (Instrumentality). If this link is broken, motivation collapses.<br>5.  <strong>Recognition and Appreciation (Maslow/Herzberg):</strong> Beyond pay, authorities must create systems for recognizing good work. This appeals to higher-level needs for esteem and is a powerful, often low-cost, way to enhance motivation and morale." },
-                    { q: "...if research says that this construct [job satisfaction] is correlated with organizational commitment...what does this mean? Further, if the correlation value...is r=0.53, what...methodology was employed...? Elaborate...", meta: "2021-22 | Open Book | 10 Marks", a: "If research says that job satisfaction is correlated with organizational commitment, it means there is a statistical relationship between the two variables. As one variable changes, the other tends to change in a predictable direction.<br><br>A correlation value of <strong>r = 0.53</strong> means there is a <strong>moderate, positive relationship</strong>. This indicates that as an employee's level of job satisfaction increases, their level of organizational commitment also tends to increase. It's important to note this does not mean satisfaction <em>causes</em> commitment, only that they are linked.<br><br>The methodology most likely employed to get these results would be a <strong>cross-sectional survey research design</strong>.<br><br><strong>Elaboration of the Research Methodology:</strong><br>1.  <strong>Research Question:</strong> Is there a relationship between job satisfaction and organizational commitment?<br>2.  <strong>Hypothesis:</strong> There will be a positive relationship between job satisfaction and organizational commitment.<br>3.  <strong>Sample:</strong> The researcher would select a sample of employees from one or more organizations. Let's say a hypothetical sample of 200 employees.<br>4.  <strong>Data Collection:</strong> The researcher would administer a questionnaire to these employees. This questionnaire would contain two standardized scales: A scale to measure job satisfaction (e.g., the Minnesota Satisfaction Questionnaire) and a scale to measure organizational commitment (e.g., Allen and Meyer's Three-Component Model scale).<br>5.  <strong>Hypothetical Dataset:</strong> The researcher would then have a dataset where each of the 200 employees has a score for satisfaction (e.g., on a scale of 1-5) and a score for commitment (e.g., on a scale of 1-5).<br>6.  <strong>Statistical Analysis:</strong> The researcher would use statistical software to run a <strong>Pearson correlation analysis</strong> on the two sets of scores. The software would calculate the correlation coefficient (r). In this case, the analysis yields r = 0.53. The researcher would also determine if this result is statistically significant (e.g., p < .05), which would indicate that the relationship is unlikely to be due to random chance.<br>7.  <strong>Conclusion:</strong> The researcher would conclude that the hypothesis is supported: there is a moderate, positive, and statistically significant relationship between job satisfaction and organizational commitment." },
-                    { q: "Your boss assigns you the task to assess the impact of organizational commitment...on...job satisfaction, how would you analyze this cause-effect relationship...? Explain the research process...", meta: "2024 | Open Book | 12 Marks", a: "To analyze this cause-and-effect relationship for my boss, I would explain that establishing true causality is difficult, but we can design a study to test the proposed impact. The ideal methodology would be a <strong>longitudinal research design</strong>, as it allows us to measure variables at multiple time points to better infer causality.<br><br><strong>Research Process Explanation for the Boss:</strong><br>1.  <strong>The Plan (Research Design):</strong> \"Boss, to see if commitment truly <em>impacts</em> satisfaction over time, we can't just survey people once. I propose a two-wave longitudinal study. We'll survey a group of our employees now, and then survey the same group again in six months.\"<br>2.  <strong>The Tools (Measures):</strong> \"In both surveys, we will use two confidential, validated questionnaires: one to measure organizational commitment and one to measure job satisfaction.\"<br>3.  <strong>The Analysis (Statistical Method):</strong> \"After we collect the data from both time points, I will use a statistical technique called <strong>cross-lagged panel analysis</strong>. This is a powerful method that allows us to see if commitment at Time 1 predicts job satisfaction at Time 2, while controlling for their initial levels. This is the closest we can get to testing a causal link without running a full experiment.\"<br>4.  <strong>Hypothetical Results & Interpretation:</strong> \"Let's imagine our analysis shows the following:<ul><li>Organizational commitment at Time 1 significantly and positively predicts job satisfaction at Time 2.</li><li>Job satisfaction at Time 1 does <em>not</em> significantly predict organizational commitment at Time 2.</li></ul><strong>Interpretation for the Boss:</strong> \"Based on these hypothetical results, I would report: 'The data suggests there is a directional impact. It appears that when employees feel more committed to the company, their satisfaction with their specific job tends to increase over the following six months. This implies that initiatives aimed at boosting overall company commitment could be an effective long-term strategy for improving job satisfaction.'\"" }
-                ]
-            },
-            behaviors: {
-                concepts: `
-                     <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">The Two Dimensions of Performance</h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-green-600">Productive Behavior</h4>
-                                    <p class="font-semibold">Task Performance:</p>
-                                    <p class="mb-2">These are your core job duties. It's the list of duties in your job description that you are formally paid to do. For a chef, it's cooking food correctly and safely.</p>
-                                    <p class="font-semibold">Contextual Performance (OCBs):</p>
-                                    <p>This is being a good "organizational citizen." It's all the helpful, voluntary stuff you do that isn't in your job description but makes the workplace better. For a chef, it might be staying late to help a struggling new cook.</p>
-                                </div>
-                                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                    <h4 class="font-bold text-lg mb-2 text-red-600">Counterproductive Work Behavior (CWB)</h4>
-                                    <p class="font-semibold">Definition:</p>
-                                    <p class="mb-2"><strong>Intentional</strong> behaviors by an employee that harm the well-being of the organization or its members. The key word is <strong>intentional</strong>; an honest mistake is not a CWB.</p>
-                                    <p class="font-semibold">Biggest Cause:</p>
-                                    <p>Perceptions of injustice. When employees feel they are being treated unfairly, they are far more likely to engage in CWBs to retaliate.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-semibold mb-3 text-slate-800">Can CWBs Be Transformed into Productive Behaviors?</h3>
-                            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                                <p>The answer is nuanced. You cannot transform a negative act itself; you transform the <strong class="text-sky-600">environment and motivations</strong> that cause it. You don't turn a rotten apple back into a fresh one; you fix the leaky, damp barrel that is causing all the apples to rot.<br><br>By addressing the root causes—like ensuring fair pay, training managers to be respectful, and creating a positive work environment—an organization reduces the reasons for employees to engage in CWBs. When employees feel valued and treated fairly, they are much more likely to engage in productive behaviors like OCBs.</p>
-                            </div>
-                        </div>
-                    </div>
-                `,
-                practice: [
-                    { q: "Define Organizational Citizenship Behaviors (OCBs). Are they productive by nature?", meta: "2023-24 | Closed Book | 6 Marks", a: "<strong>Organizational Citizenship Behaviors (OCBs)</strong> are discretionary, voluntary behaviors that are not part of an employee's formal job requirements but which, in aggregate, help promote the effective functioning of the organization. In simple terms, it's about being a good \"organizational citizen\" and going above and beyond the call of duty.<br><br>By their very nature, OCBs are considered a form of <strong>productive behavior</strong>, specifically classified as contextual performance. They are productive because they contribute positively to the social and psychological environment of the workplace, which can lead to increased efficiency and effectiveness. For example, an employee who helps a coworker catch up on work (altruism) directly contributes to team productivity. An employee who doesn't complain about minor issues (sportsmanship) helps maintain a positive team morale.<br><br>However, while productive by nature, there can be a \"dark side.\" An employee might engage in so many OCBs that they neglect their core task performance. Also, some OCBs might be performed with ulterior motives (e.g., to impress the boss for a promotion), which can sometimes lead to negative social dynamics. Despite these potential downsides, OCBs are overwhelmingly viewed as a positive and productive form of employee behavior." },
-                    { q: "Elaborate the various determinants of productive behavior. Are there issues in studying the operationalization and manifestation of OCBs at workplaces?", meta: "2024-25 | Closed Book | 10 Marks", a: "The determinants of productive behavior, which includes both task and contextual performance (OCBs), are multifaceted. Key determinants include:<br><ul><li><strong>Individual Differences:</strong> Personality traits are strong predictors. For example, <strong>Conscientiousness</strong> is a consistent predictor of strong task performance. <strong>Agreeableness</strong> is often linked to higher rates of OCBs. Cognitive ability is also a strong predictor of an individual's ability to perform core job tasks.</li><li><strong>Attitudes:</strong> Job satisfaction and organizational commitment are significant determinants. Employees who are satisfied and committed are much more likely to perform well and engage in OCBs.</li><li><strong>Perceptions of Justice:</strong> When employees feel they are treated fairly by the organization (distributive, procedural, and interactional justice), they are more motivated to reciprocate with productive behaviors.</li></ul>Yes, there are significant issues in studying the operationalization and manifestation of OCBs:<br>1.  <strong>The Motivation Issue:</strong> It's difficult to operationalize and measure <em>why</em> someone is performing an OCB. Is an employee helping a coworker out of genuine altruism, or are they doing it strategically to make themselves look good in front of the manager (impression management)? The same manifest behavior can stem from very different, and difficult to measure, intentions.<br>2.  <strong>The Discretionary Issue:</strong> OCBs are, by definition, discretionary and not formally rewarded. However, in many modern workplaces, \"being a team player\" (i.e., performing OCBs) has become an implicit expectation and is often considered during performance reviews. This blurs the line between voluntary OCBs and expected in-role behavior, making it difficult to operationalize what is truly \"above and beyond.\"<br>3.  <strong>The Cultural Issue:</strong> The manifestation of OCBs can be culturally dependent. A behavior seen as helpful in one culture might be seen as intrusive or inappropriate in another, making it difficult to have a universally applicable definition and measurement of OCBs." },
-                    { q: "According to the experts, what all special issues need to be discussed in the study and understanding of job performance?", meta: "2022-23 | Closed Book | 10 Marks", a: "According to experts, several special issues need to be discussed to have a complete understanding of job performance beyond simply measuring task output. These include:<br><br>1.  <strong>The Dynamic Nature of Performance:</strong> Job performance is not static; it changes over time. An employee might perform very well initially but then plateau or decline. Researchers must consider performance trajectories and the factors that cause them to change, such as skill acquisition, motivation changes, or burnout.<br>2.  <strong>The Multidimensional Nature of Performance:</strong> As discussed, performance is not a single concept. It includes <strong>task performance</strong> (core duties), <strong>contextual performance</strong> (OCBs), and avoiding <strong>counterproductive work behaviors (CWBs)</strong>. A full understanding requires measuring all these dimensions. An employee could excel at their tasks but be a toxic coworker, resulting in poor overall performance.<br>3.  <strong>The Distinction Between Behavior and Results:</strong> It's crucial to distinguish between the behaviors an employee engages in and the results they achieve. Results are often influenced by factors outside the employee's control (e.g., a poor economy, faulty equipment). A comprehensive understanding of performance should focus on evaluating the behaviors, which are under the employee's control.<br>4.  <strong>The Role of Technology:</strong> Technology is constantly changing the nature of work and how performance is measured. Issues like performance in remote work contexts, the use of electronic performance monitoring, and performance on collaborative digital platforms need to be considered." },
-                    { q: "Write short notes on: b) Organizational Citizenship Behaviors (OCBs)", meta: "2022-23 | Closed Book | 5 Marks", a: "Organizational Citizenship Behaviors (OCBs) are voluntary, discretionary actions taken by employees that are not part of their formal job description but contribute to the overall effectiveness of the organization. They represent the \"good soldier\" syndrome, where employees go above and beyond their required duties. OCBs are a form of contextual performance and can be directed towards individuals (OCB-I), such as helping a coworker, or towards the organization (OCB-O), such as defending the company against criticism. Common examples include altruism, conscientiousness, sportsmanship, courtesy, and civic virtue. While generally positive, an overemphasis on OCBs can potentially lead employees to neglect their core tasks." },
-                    { q: "Differentiate between productive and counterproductive behaviors.", meta: "2017-18 | Closed Book | 5 Marks", a: "Productive and counterproductive behaviors represent opposite ends of the spectrum of employee actions in terms of their impact on the organization.<br><br><strong>Productive Behavior:</strong> This refers to any employee action that contributes positively to achieving organizational goals. It is typically broken down into two components:<br>1.  <strong>Task Performance:</strong> Fulfilling the core duties required by one's job.<br>2.  <strong>Contextual Performance (OCBs):</strong> Voluntary actions that go beyond the job description to help the organization, such as helping coworkers or showing loyalty.<br><br><strong>Counterproductive Work Behavior (CWB):</strong> This refers to any <strong>intentional</strong> employee action that harms the legitimate interests and well-being of the organization or its members.<br><br>The key differentiators are <strong>intent</strong> and <strong>consequence</strong>. Productive behaviors are intended to help and have positive consequences for the organization. Counterproductive behaviors are intended to harm (or are performed with reckless disregard) and have negative consequences for the organization. An employee who works hard to meet a deadline is showing productive behavior. An employee who intentionally deletes important files to get back at their manager is showing counterproductive behavior." },
-                    { q: "Discuss a few counterproductive work behaviors... What causes them? Can they be prevented or managed? Comment.", meta: "2022-23 | Closed Book | 10 Marks", a: "Several counterproductive work behaviors (CWBs) can be witnessed in organizations, and they can be categorized by their target:<br><br><strong>CWB-O (Targeting the Organization):</strong><ul><li><strong>Production Deviance:</strong> Intentionally working slowly, taking excessive breaks, wasting resources.</li><li><strong>Property Deviance:</strong> Theft of company property, sabotage of equipment, vandalism.</li></ul><strong>CWB-I (Targeting Individuals):</strong><ul><li><strong>Political Deviance:</strong> Spreading rumors, gossiping.</li><li><strong>Personal Aggression:</strong> Harassment, verbal abuse, bullying.</li></ul><strong>Causes:</strong><br>The single strongest cause of CWBs is the employee's <strong>perception of injustice or unfairness</strong>. When employees feel they have been treated unfairly by their manager or the organization, they may engage in CWBs as a form of retaliation. Other causes include high-stress environments, frustrating work conditions, and certain personality traits like low conscientiousness and low agreeableness.<br><br><strong>Prevention and Management:</strong><br>Yes, they can be prevented and managed. The most effective strategy is to address the root causes:<br>1.  <strong>Promote Organizational Justice:</strong> The most important step is to create a fair workplace. This means having fair and transparent procedures for pay, promotions, and decision-making (procedural justice), and training managers to treat employees with respect and dignity (interactional justice).<br>2.  <strong>Screening:</strong> Organizations can use pre-employment screening for personality traits (e.g., integrity tests) that are known to be negatively correlated with CWBs.<br>3.  <strong>Clear Policies and Enforcement:</strong> Having clear policies that define CWBs and consistent enforcement of those policies can create a deterrent effect.<br><br>It is far more effective to proactively create a positive and fair environment to prevent CWBs than it is to reactively punish them after they occur." },
-                    { q: "Discuss the various ways by which one can reduce the instances of counterproductive behaviors... Suggest strategies through which counterproductive behaviors can be transformed into productive ones. Do you think such transformation is possible?", meta: "2024-25 | Closed Book | 10 Marks", a: "One can reduce instances of counterproductive behaviors (CWBs) by focusing on proactive, preventative strategies that address the root causes of such behavior. Key ways include:<br><ul><li><strong>Ensuring Organizational Justice:</strong> This is the most crucial step. Implement fair procedures for rewards and promotions, be transparent in decision-making, and train managers to treat all employees with respect.</li><li><strong>Effective Leadership and Supervision:</strong> Supportive leaders who provide feedback and treat employees fairly can significantly reduce feelings of frustration that lead to CWBs.</li><li><strong>Stress Management:</strong> Implement programs to reduce workplace stressors, as high stress is a major trigger for CWBs.</li><li><strong>Personnel Selection:</strong> Utilize integrity tests and personality assessments during hiring to screen out individuals with a high propensity for engaging in CWBs.</li></ul>The idea of \"transforming\" counterproductive behaviors into productive ones is nuanced. It is not possible to transform a negative act, like theft, directly into a positive act. However, it is absolutely possible to <strong>transform the underlying conditions and motivations that lead to the CWB.</strong><br><br><strong>Transformation is possible</strong> in this sense. By addressing the root cause, you can eliminate the CWB and create an environment where productive behaviors, like OCBs, are more likely to occur. For example:<br><ul><li>An employee who engages in production deviance (working slowly) because they feel underpaid and disrespected might be resentful.</li><li>If the organization addresses this by conducting a fair pay review (distributive justice) and the manager starts recognizing their contributions (interactional justice), the employee's resentment may disappear.</li><li>This eliminates the motivation for the CWB. Furthermore, feeling valued and fairly treated, the employee might now be motivated to not only perform their core tasks well but also engage in OCBs, like helping others.</li></ul>So, the transformation is not of the behavior itself, but of the employee's attitude and the organizational environment, which in turn changes the employee's behavior from counterproductive to productive." },
-                    { q: "Recall your understanding...about the various productive and counter-productive behaviors...highlight the significant causes of concern from an all-exclusive employee perspective and suggest remedial measures...", meta: "2021-22 | Open Book | 10 Marks", a: "From an all-exclusive employee perspective, the significant causes of concern that lead to the display of productive versus counterproductive behaviors are primarily rooted in perceptions of fairness, respect, and psychological well-being.<br><br><strong>Significant Causes of Concern (Employee Perspective):</strong><br>1.  <strong>Perceived Injustice:</strong> This is the primary concern. If an employee sees others being rewarded unfairly, if procedures for promotions are biased, or if they are treated disrespectfully by a manager, it creates a sense of injustice that is a powerful motivator for CWBs.<br>2.  <strong>Psychological Contract Violation:</strong> Employees have an unwritten set of expectations about what they will give to and receive from the organization. When the organization violates this contract (e.g., by promising development opportunities that never materialize), employees may reduce their productive behaviors (OCBs) and engage in CWBs to retaliate.<br>3.  <strong>High Stress and Burnout:</strong> An environment of excessive workload, lack of control, and insufficient support leads to stress and burnout. This depletes the employee's energy for productive behaviors and can lead to withdrawal behaviors (a form of CWB) like absenteeism.<br><br><strong>Remedial Measures to Enhance Organizational Effectiveness:</strong><br>1.  <strong>Implement and Uphold Organizational Justice:</strong> The most critical remedial measure is to build a fair system. This means creating transparent and fair processes for rewards (procedural justice), ensuring outcomes are equitable (distributive justice), and training managers to treat employees with dignity and respect (interactional justice).<br>2.  <strong>Supportive Leadership:</strong> Train managers to be supportive, to provide regular and constructive feedback, and to act as buffers against stress.<br>3.  <strong>Manage Workloads and Provide Resources:</strong> Ensure that workloads are reasonable and that employees have the necessary resources, autonomy, and support to perform their jobs effectively. This reduces stress and frustration, which are key triggers for CWBs." },
-                    { q: "Differentiate between productive and counterproductive behaviors. What are the practical applications of organizational commitment research with respect to organizations. Discuss.", meta: "2017-18 | Closed Book | 5 Marks", a: "<strong>Differentiation:</strong><br><strong>Productive Behavior</strong> encompasses all employee actions that positively contribute to organizational goals. This includes both required <strong>task performance</strong> (doing your job) and voluntary <strong>contextual performance</strong> or <strong>OCBs</strong> (being a good citizen).<br><strong>Counterproductive Work Behavior (CWB)</strong> encompasses all intentional employee actions that harm the organization or its members, such as theft, sabotage, or harassment.<br>The key difference lies in the intent and consequence: productive behavior is intended to help, while counterproductive behavior is intended to harm.<br><br><strong>Practical Applications of Organizational Commitment Research:</strong><br>Research on organizational commitment has highly practical applications for organizations focused on retaining talent and improving performance.<br>1.  <strong>Reducing Turnover:</strong> The strongest application is in managing employee turnover. Research consistently shows that employees with high <strong>affective commitment</strong> (emotional attachment) are significantly less likely to leave. Therefore, organizations can apply this research by implementing strategies that build this type of commitment, such as promoting a positive culture and showing employees they are valued.<br>2.  <strong>Increasing Performance:</strong> Employees with high affective commitment are more likely to exert extra effort and engage in OCBs. Organizations can apply this by investing in initiatives that build commitment, knowing it will likely pay off in improved contextual and task performance.<br>3.  <strong>Diagnosing Problems:</strong> By measuring the three types of commitment (affective, continuance, normative), an organization can diagnose the health of its workforce. If a company finds it has high continuance commitment but low affective commitment, it's a major red flag. It means employees are staying because they feel trapped, not because they want to. This insight allows the organization to address the underlying issues causing this \"trapped\" mentality." }
-                ]
-            }
-        };
-
-        function createSectionHTML(sectionId, conceptsHTML, practiceData) {
-            const practiceHTML = practiceData.map((item, index) => `
-                <div class="bg-white rounded-lg shadow-md border border-slate-200">
-                    <button class="accordion-button w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center gap-4" data-target="accordion-${sectionId}-${index}">
-                        <div class="flex-grow">
-                            <p>Q: ${item.q}</p>
-                            <p class="text-xs font-normal text-slate-500 mt-2">${item.meta}</p>
-                        </div>
-                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div id="accordion-${sectionId}-${index}" class="accordion-content">
-                        <div class="prose prose-slate max-w-none"><strong class="text-slate-700">Answer:</strong> ${item.a}</div>
-                    </div>
-                </div>
-            `).join('');
-
-            return `
-                <div class="flex justify-center mb-6">
-                    <div class="inline-flex rounded-lg shadow-sm">
-                        <button class="section-toggle px-6 py-2 rounded-l-lg font-medium text-sm active-toggle" data-section="${sectionId}" data-view="concepts">Key Concepts</button>
-                        <button class="section-toggle px-6 py-2 rounded-r-lg font-medium text-sm inactive-toggle" data-section="${sectionId}" data-view="practice">Exam Practice</button>
-                    </div>
-                </div>
-                <div id="${sectionId}-concepts-view" class="view-content">
-                    ${conceptsHTML}
-                </div>
-                <div id="${sectionId}-practice-view" class="view-content hidden space-y-4">
-                    ${practiceHTML}
-                </div>
-            `;
-        }
-        
-        function setupAccordionContentStyling() {
-             document.querySelectorAll('.accordion-content p').forEach(el => el.classList.add('text-slate-600', 'leading-relaxed'));
-             document.querySelectorAll('.accordion-content strong').forEach(el => el.classList.add('text-slate-700'));
-             document.querySelectorAll('.accordion-content ul').forEach(el => el.classList.add('list-disc', 'list-inside', 'space-y-2', 'mt-2'));
-             document.querySelectorAll('.accordion-content li').forEach(el => el.classList.add('pl-2'));
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('foundations-content').innerHTML = createSectionHTML('foundations', contentData.foundations.concepts, contentData.foundations.practice);
-            document.getElementById('journey-content').innerHTML = createSectionHTML('journey', contentData.journey.concepts, contentData.journey.practice);
-            document.getElementById('behaviors-content').innerHTML = createSectionHTML('behaviors', contentData.behaviors.concepts, contentData.behaviors.practice);
-            
-            initializeEventListeners();
-            initializeCharts();
-            initializeNavObserver();
-            setupAccordionContentStyling(); // Call the new styling function
-        });
-        
-        function initializeEventListeners() {
-            document.querySelectorAll('.section-toggle').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const section = e.target.dataset.section;
-                    const view = e.target.dataset.view;
-
-                    document.querySelectorAll(`[data-section="${section}"]`).forEach(btn => {
-                        btn.classList.remove('active-toggle', 'inactive-toggle');
-                        if (btn.dataset.view === view) {
-                            btn.classList.add('active-toggle');
-                        } else {
-                            btn.classList.add('inactive-toggle');
-                        }
-                    });
-
-                    document.getElementById(`${section}-concepts-view`).classList.toggle('hidden', view !== 'concepts');
-                    document.getElementById(`${section}-practice-view`).classList.toggle('hidden', view !== 'practice');
-                });
-            });
-
-            document.body.addEventListener('click', function(e) {
-                if (e.target.closest('.accordion-button')) {
-                    const button = e.target.closest('.accordion-button');
-                    const content = document.getElementById(button.dataset.target);
-                    button.classList.toggle('open');
-                    content.classList.toggle('open');
-                }
-            });
-        }
-        
-        function initializeNavObserver() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active-nav', 'inactive-nav');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active-nav');
-                            } else {
-                                link.classList.add('inactive-nav');
-                            }
-                        });
-                    }
-                });
-            }, { rootMargin: "-50% 0px -50% 0px" });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        }
-        
-        function initializeCharts() {
-            // The Mediator/Moderator chart was replaced with a pure HTML/CSS diagram,
-            // so the JavaScript chart initialization for it is no longer needed and was removed to fix an error.
-
-            // Commitment Chart
-            const commitmentCanvas = document.getElementById('commitmentChart');
-            if (commitmentCanvas) {
-                const ctxCommitment = commitmentCanvas.getContext('2d');
-                new Chart(ctxCommitment, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Affective (Want to stay)', 'Continuance (Need to stay)', 'Normative (Ought to stay)'],
-                        datasets: [{
-                            label: 'Types of Organizational Commitment',
-                            data: [50, 25, 25],
-                            backgroundColor: [
-                                'rgba(14, 165, 233, 0.8)', // sky-500
-                                'rgba(245, 158, 11, 0.8)', // amber-500
-                                'rgba(168, 85, 247, 0.8)'  // purple-500
-                            ],
-                            borderColor: '#f8fafc',
-                            borderWidth: 4
-                        }]
-                    },
-                    options: {
-                        maintainAspectRatio: false,
-                        responsive: true,
-                        plugins: {
-                            legend: { position: 'bottom' },
-                            title: { display: true, text: 'The Three Components of Organizational Commitment' }
-                        }
-                    }
-                });
-            }
-        }
-    </script>
+    <!-- Scripts (order matters: data first, then utilities, then UI, then main) -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>

@@ -1,0 +1,21 @@
+/* ==============================================
+   Layout - Containers, Grid, Spacing
+   ============================================== */
+
+/* Chart container with responsive sizing */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}

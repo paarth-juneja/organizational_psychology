@@ -1,0 +1,45 @@
+/* ==============================================
+   CSS Variables - Design Tokens
+   ============================================== */
+
+:root {
+    /* Typography */
+    --font-primary: 'Inter', sans-serif;
+    
+    /* Colors - Slate palette */
+    --color-slate-50: #f8fafc;
+    --color-slate-200: #e2e8f0;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+    
+    /* Colors - Sky palette */
+    --color-sky-500: #0ea5e9;
+    --color-sky-600: #0284c7;
+    
+    /* Colors - Amber palette */
+    --color-amber-500: rgba(245, 158, 11, 0.8);
+    --color-amber-600: #d97706;
+    
+    /* Colors - Purple palette */
+    --color-purple-500: rgba(168, 85, 247, 0.8);
+    
+    /* Colors - Contextual */
+    --color-rose-100: #ffe4e6;
+    --color-rose-800: #9f1239;
+    --color-sky-100: #e0f2fe;
+    --color-sky-800: #075985;
+    --color-amber-100: #fef3c7;
+    --color-amber-800: #92400e;
+    
+    /* Backgrounds */
+    --bg-body: var(--color-slate-50);
+    --bg-card: #ffffff;
+    
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease-out;
+}

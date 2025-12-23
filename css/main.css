@@ -1,0 +1,15 @@
+/* ==============================================
+   Main Stylesheet
+   Organizational Psychology Interactive Guide
+   ============================================== */
+
+/* Import CSS modules */
+@import url('variables.css');
+@import url('layout.css');
+@import url('components.css');
+
+/* Base Styles */
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-body);
+}
