@@ -1,15 +1,46 @@
-/* ==============================================
-   Main Stylesheet
-   Organizational Psychology Interactive Guide
-   ============================================== */
-
-/* Import CSS modules */
 @import url('variables.css');
 @import url('layout.css');
 @import url('components.css');
 
-/* Base Styles */
 body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-body);
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-body);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 20%);
+    background-attachment: fixed;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for Webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Prose enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text-heading);
+    letter-spacing: -0.025em;
+    /* Tight tracking for headings */
 }

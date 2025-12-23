@@ -1,45 +1,52 @@
-/* ==============================================
-   CSS Variables - Design Tokens
-   ============================================== */
-
 :root {
+    /* ==============================================
+       Color Palette (Premium / Modern)
+       ============================================== */
+
+    /* Primary Brand Checks (Sky Blue -> Indigo Gradient) */
+    --color-primary-light: #38bdf8;
+    /* sky-400 */
+    --color-primary: #0ea5e9;
+    /* sky-500 */
+    --color-primary-dark: #0284c7;
+    /* sky-600 */
+
+    /* Accent (Amber for highlights) */
+    --color-accent: #f59e0b;
+    /* amber-500 */
+    --color-accent-light: #fcd34d;
+    /* amber-300 */
+
+    /* Neutrals (Cool Slate) */
+    --color-bg-body: #f8fafc;
+    /* slate-50 */
+    --color-bg-card: #ffffff;
+    --color-text-main: #334155;
+    /* slate-700 */
+    --color-text-muted: #64748b;
+    /* slate-500 */
+    --color-text-heading: #0f172a;
+    /* slate-900 */
+    --color-border: #e2e8f0;
+    /* slate-200 */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+    --gradient-surface: linear-gradient(to bottom right, #ffffff 0%, #f8fafc 100%);
+    --gradient-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+
+    /* Shadows (Layered for depth) */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-card-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 15px rgba(14, 165, 233, 0.3);
+
     /* Typography */
-    --font-primary: 'Inter', sans-serif;
-    
-    /* Colors - Slate palette */
-    --color-slate-50: #f8fafc;
-    --color-slate-200: #e2e8f0;
-    --color-slate-400: #94a3b8;
-    --color-slate-500: #64748b;
-    --color-slate-600: #475569;
-    --color-slate-700: #334155;
-    --color-slate-800: #1e293b;
-    --color-slate-900: #0f172a;
-    
-    /* Colors - Sky palette */
-    --color-sky-500: #0ea5e9;
-    --color-sky-600: #0284c7;
-    
-    /* Colors - Amber palette */
-    --color-amber-500: rgba(245, 158, 11, 0.8);
-    --color-amber-600: #d97706;
-    
-    /* Colors - Purple palette */
-    --color-purple-500: rgba(168, 85, 247, 0.8);
-    
-    /* Colors - Contextual */
-    --color-rose-100: #ffe4e6;
-    --color-rose-800: #9f1239;
-    --color-sky-100: #e0f2fe;
-    --color-sky-800: #075985;
-    --color-amber-100: #fef3c7;
-    --color-amber-800: #92400e;
-    
-    /* Backgrounds */
-    --bg-body: var(--color-slate-50);
-    --bg-card: #ffffff;
-    
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
     /* Transitions */
-    --transition-fast: 0.3s ease;
-    --transition-medium: 0.5s ease-out;
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }

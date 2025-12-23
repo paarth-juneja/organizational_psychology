@@ -1,52 +1,116 @@
 /* ==============================================
-   Components - Reusable UI Elements
+   Components - UI Elements & Interactive States
    ============================================== */
 
-/* Navigation States */
+/* --- Navigation --- */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color var(--transition-normal);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-normal);
+    opacity: 0.8;
+}
+
+.nav-link:hover::after,
+.active-nav::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .active-nav {
-    color: var(--color-sky-600);
-    font-weight: 600;
+    color: var(--color-primary-dark);
 }
 
-.inactive-nav {
-    color: var(--color-slate-600);
-    border-bottom-color: transparent;
-}
-
-/* Section Toggle Buttons */
+/* --- Buttons & Toggles --- */
 .section-toggle {
-    transition: background-color var(--transition-fast),
-        color var(--transition-fast);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .active-toggle {
-    background-color: var(--color-sky-500);
+    background: var(--gradient-primary);
     color: white;
+    box-shadow: var(--shadow-glow);
+    border: none;
 }
 
 .inactive-toggle {
-    background-color: var(--color-slate-200);
-    color: var(--color-slate-600);
+    background: white;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
 }
 
-/* Accordion Component */
+.inactive-toggle:hover {
+    background: var(--color-bg-body);
+    color: var(--color-primary);
+}
+
+/* --- Accordions --- */
+.accordion-button {
+    transition: all var(--transition-normal);
+    border-left: 3px solid transparent;
+}
+
+.accordion-button:hover {
+    background-color: #f0f9ff;
+    /* sky-50 */
+    color: var(--color-primary-dark);
+}
+
+.accordion-button[aria-expanded="true"],
+/* Accessibility improvement if added */
+.accordion-button.open {
+    background-color: #e0f2fe;
+    /* sky-100 */
+    border-left-color: var(--color-primary);
+}
+
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-medium),
-        padding var(--transition-medium);
-    padding: 0 1.5rem;
+    transition: max-height var(--transition-bounce), opacity var(--transition-normal), padding var(--transition-bounce);
+    opacity: 0;
 }
 
 .accordion-content.open {
-    max-height: 1500px;
-    padding: 1.5rem 1.5rem;
+    max-height: 2000px;
+    /* Generous height */
+    opacity: 1;
 }
 
 .accordion-button svg {
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-bounce);
 }
 
 .accordion-button.open svg {
     transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+/* --- Cards (Enhancement over Tailwind classes) --- */
+/* Target elements that have these specific Tailwind classes to upgrade them */
+.bg-white.shadow-md {
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Glass-ish border */
+}
+
+.bg-white.shadow-md:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
 }
